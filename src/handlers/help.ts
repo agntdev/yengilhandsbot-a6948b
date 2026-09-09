@@ -9,10 +9,9 @@ import { inlineButton, inlineKeyboard } from "../toolkit/index.js";
 const composer = new Composer<Ctx>();
 
 const HELP =
-  "ℹ️ Tap /start to open the menu, then pick what you want from the buttons.\n\n" +
-  "Everything in this bot is reachable by tapping — you don't need to remember any commands.";
+  "Yozilish uchun bosh menyudagi «Онлайн запись» tugmasini bosing. Xizmat, sana va vaqtni tanlab, ismingiz hamda telefoningizni yuboring.";
 
-const backToMenu = inlineKeyboard([[inlineButton("⬅️ Back to menu", "menu:main")]]);
+const backToMenu = inlineKeyboard([[inlineButton("Bosh menyu", "menu:main")]]);
 
 composer.command("help", async (ctx) => {
   await ctx.reply(HELP);

@@ -5,9 +5,9 @@
       {
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Klinika manzilini ko'rsatadi"
+              "text": "Termiz shahar, Ibn Sino ko'chasi 27A"
             }
           }
         ],

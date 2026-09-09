@@ -5,9 +5,9 @@
       {
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Telefon raqam va tez qo'ng'iroq tugmasini ko'rsatadi"
+              "text": "Biz bilan bog'laning: +998 99 278 14 14"
             }
           }
         ],

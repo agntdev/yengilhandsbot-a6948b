@@ -5,9 +5,9 @@
       {
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Yozuv oqimini boshlaydi — xizmatni tanlashdan boshlanadi"
+              "text": "Qaysi xizmat kerak?"
             }
           }
         ],
