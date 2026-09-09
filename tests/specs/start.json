@@ -7,7 +7,7 @@
         "expect": [
           {
             "method": "sendMessage",
-            "payload": { "text": "👋 Welcome! Tap a button below to get started." }
+            "payload": { "text": "Yengil qo'llar stomatologiyasiga xush kelibsiz. Kerakli bo'limni tanlang." }
           }
         ]
       }

@@ -1,17 +1,18 @@
-import { Composer } from "grammy";
+import { Composer, Keyboard } from "grammy";
+import type { Ctx } from "../bot.js";
+import { inlineButton, inlineKeyboard, registerMainMenuItem } from "../toolkit/index.js";
 
-// SCAFFOLD — generated from the bot blueprint BEFORE the agent runs.
-// Keep a LIVE registration (.command / .callbackQuery / …) so this feature is
-// never an empty stub. Replace the reply body with real logic + copy; if you
-// change the user-facing text, update tests/specs to match EXACTLY.
-// Do NOT rewrite src/bot.ts — buildBot() already auto-loads this module.
-// Menu: wire this into /start via registerMainMenuItem({ label: "☎️ Контакты", data: "show:contacts" }) if the toolkit exposes it.
-
-const composer = new Composer();
+registerMainMenuItem({ label: "☎️ Контакты", data: "show:contacts", order: 30 });
+const composer = new Composer<Ctx>();
 
 composer.callbackQuery("show:contacts", async (ctx) => {
   await ctx.answerCallbackQuery();
-  await ctx.reply("Telefon raqam va tez qo'ng'iroq tugmasini ko'rsatadi");
+  await ctx.editMessageText("Biz bilan bog'laning: +998 99 278 14 14", {
+    reply_markup: inlineKeyboard([[inlineButton("Bosh menyu", "menu:main")]]),
+  });
+  await ctx.reply("Raqamingizni ham yuborishingiz mumkin.", {
+    reply_markup: new Keyboard().requestContact("Kontaktimni yuborish").resized().oneTime(),
+  });
 });
 
 export default composer;

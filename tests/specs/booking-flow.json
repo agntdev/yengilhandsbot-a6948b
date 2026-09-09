@@ -1,0 +1,13 @@
+[
+  {
+    "name": "patient can reach the booking confirmation screen",
+    "steps": [
+      { "send": { "callback": "booking:start" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Qaysi xizmat kerak?" } }] },
+      { "send": { "callback": "b:service:treatment" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Qabul kunini tanlang. Yakshanba dam olish kuni." } }] },
+      { "send": { "callback": "b:d:2026-09-09" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Chor, 9-sentabr uchun bo'sh vaqtni tanlang." } }] },
+      { "send": { "callback": "b:t:2026-09-09:08:30" }, "expect": [{ "method": "sendMessage", "payload": { "text": "Ismingizni kiriting." } }] },
+      { "send": { "text": "Ali Valiyev" }, "expect": [{ "method": "sendMessage", "payload": { "text": "Telefon raqamingizni yuboring yoki qo'lda yozing.", "reply_markup": { "keyboard": [[{ "request_contact": true }]] } } }] },
+      { "send": { "text": "+998 90 123 45 67" }, "expect": [{ "method": "sendMessage", "payload": { "text": "Yozuvingizni tekshiring:\nXizmat: Tishlarni davolash\nSana: Chor, 9-sentabr\nVaqt: 08:30\nIsm: Ali Valiyev\nTelefon: +998901234567" } }] }
+    ]
+  }
+]
